@@ -2,8 +2,8 @@
 Contributors: Pop-ups
 Tags: Pop-up, Popups, Pop-ups, Modals, Lightbox
 Requires at least: 4.6
-Tested up to: 6.6
-Stable tag: 1.2.6
+Tested up to: 6.7
+Stable tag: 1.2.7
 License: GPLv3
 Requires PHP: 5.6
 
@@ -61,6 +61,10 @@ Turkish: [Göz kamaştırıcı pop-uplar, bannerlar, widgetlar, lightboxlar, mod
 Vietnamese: [Tạo cửa sổ bật lên, biểu ngữ, tiện ích, hộp đèn, phương thức, cửa sổ bật lên tuyệt đẹp.](https://vi.wordpress.org/plugins/pop-up-pop-up/)
 
 == Changelog ==
+
+= 1.2.7 =
+* Tested with WordPress 6.7
+* Minor improvements for error handling
 
 = 1.2.6 =
 * Tested with WordPress 6.6
@@ -185,7 +189,6 @@ Vietnamese: [Tạo cửa sổ bật lên, biểu ngữ, tiện ích, hộp đèn
 * Initial release
 
 == Upgrade Notice ==
-= 1.2.6 =
-* Tested with WordPress 6.6
-* Minor performance improvements 
-* Improvements for PHP 8 utilization
+= 1.2.7 =
+* Tested with WordPress 6.7
+* Minor improvements for error handling

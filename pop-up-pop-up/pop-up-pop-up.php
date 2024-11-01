@@ -2,7 +2,7 @@
 /*
 Plugin Name:  MyPopUps
 Description:  Create pop-ups without coding! Our builder allows you to create amazing looking pop-ups for a wide range of purposes (newsletter subscription, discounts, cookies etc.).
-Version:      1.2.6
+Version:      1.2.7
 Text-domain:  pop-up-pop-up
 Author:       Inisev
 Author URI:   https://inisev.com
@@ -13,7 +13,7 @@ License URI:  http://www.gnu.org/licenses/gpl-3.0.en.html
 
 define('MYPOPUPS_URL', 'https://mypopups.com');
 define('MYPOPUPS_DOMAIN_CHECK_FILE', 'mypopups_domain_check.json');
-define('MPU_PLUGIN_VERSION_CURRENT', '1.2.6');
+define('MPU_PLUGIN_VERSION_CURRENT', '1.2.7');
 
 if (!function_exists('analyst_init')) {
   require_once 'analyst/main.php';
@@ -275,9 +275,9 @@ function wp_mypopups_file_code() {
   if (substr($domain, 0, 7) === 'http://') $domain = substr($domain, 7);
   $response = wp_remote_get(MYPOPUPS_URL . '/api/domains/get-code/' . $domain, [ 'sslverify' => false ]);
   $message = false;
-  if ($response) {
+  if ($response && isset($response['body'])) {
     $body = json_decode($response['body'], true);
-    if ($body['success']) {
+    if (isset($body) && $body['success']) {
       $uuid = $body['code'];
       $fp = fopen($file, 'w');
       if ($fp) {
@@ -286,7 +286,7 @@ function wp_mypopups_file_code() {
       } else {
         $message = __('Please check permission, I could not save this file: ', 'pop-up-pop-up') . $file;
       }
-    } else {
+    } else if (isset($body['message'])) {
       $message = $body['message'];
     }
   } else {
