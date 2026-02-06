@@ -2,7 +2,7 @@
 /*
 Plugin Name:  MyPopUps
 Description:  Create pop-ups without coding! Our builder allows you to create amazing looking pop-ups for a wide range of purposes (newsletter subscription, discounts, cookies etc.).
-Version:      1.2.7
+Version:      1.2.8
 Text-domain:  pop-up-pop-up
 Author:       Inisev
 Author URI:   https://inisev.com
@@ -13,7 +13,7 @@ License URI:  http://www.gnu.org/licenses/gpl-3.0.en.html
 
 define('MYPOPUPS_URL', 'https://mypopups.com');
 define('MYPOPUPS_DOMAIN_CHECK_FILE', 'mypopups_domain_check.json');
-define('MPU_PLUGIN_VERSION_CURRENT', '1.2.7');
+define('MPU_PLUGIN_VERSION_CURRENT', '1.2.8');
 
 if (!function_exists('analyst_init')) {
   require_once 'analyst/main.php';
